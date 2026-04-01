@@ -1,0 +1,33 @@
+# Cookey
+> Source: https://github.com/Lakr233/Cookey
+> Site: https://cookey.sh
+
+Cookey captures authenticated browser sessions from a mobile device and delivers
+them encrypted to a CLI terminal as Playwright-compatible storageState files.
+
+## Install
+Download the latest binary from GitHub Releases:
+  https://github.com/Lakr233/Cookey/releases/latest/download/cookey-macOS.zip
+
+Assets:
+  https://github.com/Lakr233/Cookey/releases/latest/download/cookey-macOS.zip
+    macOS universal (arm64 + x86_64), signed & notarized
+  https://github.com/Lakr233/Cookey/releases/latest/download/cookey-linux-x86_64.zip
+    Linux x86_64
+  https://github.com/Lakr233/Cookey/releases/latest/download/cookey-linux-aarch64.zip
+    Linux aarch64
+  https://github.com/Lakr233/Cookey/releases/latest/download/skills.md
+    Tool description file for LLM agents
+
+## Commands
+  cookey login <url>       Start session capture (prints QR code in terminal)
+  cookey status [rid]      Check session status
+  cookey export <rid>      Export Playwright storageState.json to stdout
+
+## Workflow
+  cookey login https://example.com/login
+  # -> QR code appears in terminal
+  # -> User scans with Cookey app, logs in
+  # -> Encrypted session delivered to CLI
+  cookey export <rid> > storageState.json
+  # -> Use with Playwright, Puppeteer, or any automation tool

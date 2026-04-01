@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		502BC3BC2F7D54C0007F5F2E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 502BC3BB2F7D54C0007F5F2E /* SnapKit */; };
+		502BC3BF2F7D54D6007F5F2E /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 502BC3BE2F7D54D6007F5F2E /* SwifterSwift */; };
+		502BC3C22F7D54F8007F5F2E /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 502BC3C12F7D54F8007F5F2E /* Then */; };
+		502BC51A2F7D592A007F5F2E /* AlertController in Frameworks */ = {isa = PBXBuildFile; productRef = 502BC3D12F7D5600007F5F2E /* AlertController */; };
+		502BC6172F7D60A4007F5F2E /* LookinServer in Frameworks */ = {isa = PBXBuildFile; productRef = 502BC6162F7D60A4007F5F2E /* LookinServer */; };
+		502BCD212F7D7327007F5F2E /* CryptoBox in Frameworks */ = {isa = PBXBuildFile; productRef = 502BCD202F7D7327007F5F2E /* CryptoBox */; };
+		502BCEE42F7D865A007F5F2E /* ConfigurableKit in Frameworks */ = {isa = PBXBuildFile; productRef = 502BCEE32F7D865A007F5F2E /* ConfigurableKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		502BC3112F7D455D007F5F2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 505FF5E22F756F77005371A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 505FF5E92F756F77005371A1;
+			remoteInfo = Cookey;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		502BC30D2F7D455D007F5F2E /* CookeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		502BCCD22F7D72FF007F5F2E /* CryptoBox */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CryptoBox; path = Packages/CryptoBox; sourceTree = "<group>"; };
+		505FF5EA2F756F77005371A1 /* Cookey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cookey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		505FF5ED2F756F77005371A1 /* Exceptions for "Cookey" folder in "Cookey" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Info.plist,
+			);
+			target = 505FF5E92F756F77005371A1 /* Cookey */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		502BC30E2F7D455D007F5F2E /* CookeyTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CookeyTests;
+			sourceTree = "<group>";
+		};
+		505FF5EC2F756F77005371A1 /* Cookey */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				505FF5ED2F756F77005371A1 /* Exceptions for "Cookey" folder in "Cookey" target */,
+			);
+			path = Cookey;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		502BC30A2F7D455D007F5F2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		505FF5E72F756F77005371A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502BC51A2F7D592A007F5F2E /* AlertController in Frameworks */,
+				502BCD212F7D7327007F5F2E /* CryptoBox in Frameworks */,
+				502BC6172F7D60A4007F5F2E /* LookinServer in Frameworks */,
+				502BCEE42F7D865A007F5F2E /* ConfigurableKit in Frameworks */,
+				502BC3BF2F7D54D6007F5F2E /* SwifterSwift in Frameworks */,
+				502BC3BC2F7D54C0007F5F2E /* SnapKit in Frameworks */,
+				502BC3C22F7D54F8007F5F2E /* Then in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		505FF5E12F756F77005371A1 = {
+			isa = PBXGroup;
+			children = (
+				505FF5EC2F756F77005371A1 /* Cookey */,
+				502BC30E2F7D455D007F5F2E /* CookeyTests */,
+				502BCCD22F7D72FF007F5F2E /* CryptoBox */,
+				505FF5EB2F756F77005371A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		505FF5EB2F756F77005371A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				505FF5EA2F756F77005371A1 /* Cookey.app */,
+				502BC30D2F7D455D007F5F2E /* CookeyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		502BC30C2F7D455D007F5F2E /* CookeyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 502BC3152F7D455D007F5F2E /* Build configuration list for PBXNativeTarget "CookeyTests" */;
+			buildPhases = (
+				502BC3092F7D455D007F5F2E /* Sources */,
+				502BC30A2F7D455D007F5F2E /* Frameworks */,
+				502BC30B2F7D455D007F5F2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				502BC3122F7D455D007F5F2E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				502BC30E2F7D455D007F5F2E /* CookeyTests */,
+			);
+			name = CookeyTests;
+			packageProductDependencies = (
+			);
+			productName = CookeyTests;
+			productReference = 502BC30D2F7D455D007F5F2E /* CookeyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		505FF5E92F756F77005371A1 /* Cookey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 505FF5F52F756F78005371A1 /* Build configuration list for PBXNativeTarget "Cookey" */;
+			buildPhases = (
+				505FF5E62F756F77005371A1 /* Sources */,
+				505FF5E72F756F77005371A1 /* Frameworks */,
+				505FF5E82F756F77005371A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				505FF5EC2F756F77005371A1 /* Cookey */,
+			);
+			name = Cookey;
+			packageProductDependencies = (
+				502BC3BB2F7D54C0007F5F2E /* SnapKit */,
+				502BC3BE2F7D54D6007F5F2E /* SwifterSwift */,
+				502BC3C12F7D54F8007F5F2E /* Then */,
+				502BC3D12F7D5600007F5F2E /* AlertController */,
+				502BC6162F7D60A4007F5F2E /* LookinServer */,
+				502BCD202F7D7327007F5F2E /* CryptoBox */,
+				502BCEE32F7D865A007F5F2E /* ConfigurableKit */,
+			);
+			productName = Cookey;
+			productReference = 505FF5EA2F756F77005371A1 /* Cookey.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		505FF5E22F756F77005371A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					502BC30C2F7D455D007F5F2E = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = 505FF5E92F756F77005371A1;
+					};
+					505FF5E92F756F77005371A1 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = 505FF5E52F756F77005371A1 /* Build configuration list for PBXProject "Cookey" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 505FF5E12F756F77005371A1;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				502BC3BA2F7D54C0007F5F2E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				502BC3BD2F7D54D6007F5F2E /* XCRemoteSwiftPackageReference "SwifterSwift" */,
+				502BC3C02F7D54F8007F5F2E /* XCRemoteSwiftPackageReference "Then" */,
+				502BC3D02F7D5600007F5F2E /* XCRemoteSwiftPackageReference "AlertController" */,
+				502BC6152F7D60A4007F5F2E /* XCRemoteSwiftPackageReference "LookInside" */,
+				502BCEE22F7D865A007F5F2E /* XCRemoteSwiftPackageReference "ConfigurableKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				505FF5E92F756F77005371A1 /* Cookey */,
+				502BC30C2F7D455D007F5F2E /* CookeyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		502BC30B2F7D455D007F5F2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		505FF5E82F756F77005371A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		502BC3092F7D455D007F5F2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		505FF5E62F756F77005371A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		502BC3122F7D455D007F5F2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 505FF5E92F756F77005371A1 /* Cookey */;
+			targetProxy = 502BC3112F7D455D007F5F2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		502BC3132F7D455D007F5F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"BUNDLE_LOADER[sdk=macosx*]" = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 964G86XT2P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.meme.CookeyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cookey.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cookey";
+				"TEST_HOST[sdk=macosx*]" = "$(BUILT_PRODUCTS_DIR)/Cookey.app/Contents/MacOS/Cookey";
+			};
+			name = Debug;
+		};
+		502BC3142F7D455D007F5F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"BUNDLE_LOADER[sdk=macosx*]" = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 964G86XT2P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.meme.CookeyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cookey.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cookey";
+				"TEST_HOST[sdk=macosx*]" = "$(BUILT_PRODUCTS_DIR)/Cookey.app/Contents/MacOS/Cookey";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		505FF5F32F756F78005371A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 964G86XT2P;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		505FF5F42F756F78005371A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 964G86XT2P;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		505FF5F62F756F78005371A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTOMATION_APPLE_EVENTS = NO;
+				CODE_SIGN_ENTITLEMENTS = Cookey/Resources/Entitlement.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 964G86XT2P;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_ENHANCED_SECURITY = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_POINTER_AUTHENTICATION = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Cookey/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cookey;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.cookey.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		505FF5F72F756F78005371A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTOMATION_APPLE_EVENTS = NO;
+				CODE_SIGN_ENTITLEMENTS = Cookey/Resources/Entitlement.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 964G86XT2P;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_ENHANCED_SECURITY = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_POINTER_AUTHENTICATION = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Cookey/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cookey;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.cookey.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		502BC3152F7D455D007F5F2E /* Build configuration list for PBXNativeTarget "CookeyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				502BC3132F7D455D007F5F2E /* Debug */,
+				502BC3142F7D455D007F5F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		505FF5E52F756F77005371A1 /* Build configuration list for PBXProject "Cookey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				505FF5F32F756F78005371A1 /* Debug */,
+				505FF5F42F756F78005371A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		505FF5F52F756F78005371A1 /* Build configuration list for PBXNativeTarget "Cookey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				505FF5F62F756F78005371A1 /* Debug */,
+				505FF5F72F756F78005371A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		502BC3BA2F7D54C0007F5F2E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		502BC3BD2F7D54D6007F5F2E /* XCRemoteSwiftPackageReference "SwifterSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwifterSwift/SwifterSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		502BC3C02F7D54F8007F5F2E /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		502BC3D02F7D5600007F5F2E /* XCRemoteSwiftPackageReference "AlertController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lakr233/AlertController";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		502BC6152F7D60A4007F5F2E /* XCRemoteSwiftPackageReference "LookInside" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lakr233/LookInside";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.2;
+			};
+		};
+		502BCEE22F7D865A007F5F2E /* XCRemoteSwiftPackageReference "ConfigurableKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lakr233/ConfigurableKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		502BC3BB2F7D54C0007F5F2E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 502BC3BA2F7D54C0007F5F2E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		502BC3BE2F7D54D6007F5F2E /* SwifterSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 502BC3BD2F7D54D6007F5F2E /* XCRemoteSwiftPackageReference "SwifterSwift" */;
+			productName = SwifterSwift;
+		};
+		502BC3C12F7D54F8007F5F2E /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 502BC3C02F7D54F8007F5F2E /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		502BC3D12F7D5600007F5F2E /* AlertController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 502BC3D02F7D5600007F5F2E /* XCRemoteSwiftPackageReference "AlertController" */;
+			productName = AlertController;
+		};
+		502BC6162F7D60A4007F5F2E /* LookinServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 502BC6152F7D60A4007F5F2E /* XCRemoteSwiftPackageReference "LookInside" */;
+			productName = LookinServer;
+		};
+		502BCD202F7D7327007F5F2E /* CryptoBox */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CryptoBox;
+		};
+		502BCEE32F7D865A007F5F2E /* ConfigurableKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 502BCEE22F7D865A007F5F2E /* XCRemoteSwiftPackageReference "ConfigurableKit" */;
+			productName = ConfigurableKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 505FF5E22F756F77005371A1 /* Project object */;
+}

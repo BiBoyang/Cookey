@@ -1,0 +1,69 @@
+services:
+  api:
+    build:
+      context: ./Server
+      dockerfile: Dockerfile
+    container_name: cookey-api
+    environment:
+      COOKEY_HOST: 0.0.0.0
+      COOKEY_PORT: 5800
+      COOKEY_PUBLIC_URL: ${COOKEY_PUBLIC_URL:-https://api.cookey.sh}
+      COOKEY_APNS_TEAM_ID: ${COOKEY_APNS_TEAM_ID}
+      COOKEY_APNS_KEY_ID: ${COOKEY_APNS_KEY_ID}
+      COOKEY_APNS_BUNDLE_ID: ${COOKEY_APNS_BUNDLE_ID}
+      COOKEY_APNS_PRIVATE_KEY_PATH: /keys/apns.p8
+    volumes:
+      - ./Secret/apns.p8:/keys/apns.p8:ro
+    ports:
+      - "5800:5800"
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl --fail --silent http://127.0.0.1:5800/health >/dev/null || exit 1",
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 3s
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./Web
+      dockerfile: Dockerfile
+    container_name: cookey-web
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget -q -O - http://127.0.0.1:3000/ >/dev/null || exit 1",
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+    restart: unless-stopped
+
+  web-tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cookey-web-tunnel
+    command: tunnel --no-autoupdate run --token ${CF_WEB_TUNNEL_TOKEN}
+    depends_on:
+      web:
+        condition: service_healthy
+    restart: unless-stopped
+
+  api-tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cookey-api-tunnel
+    command: tunnel --no-autoupdate run --token ${CF_API_TUNNEL_TOKEN}
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped

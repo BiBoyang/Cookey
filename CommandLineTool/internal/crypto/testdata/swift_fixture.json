@@ -1,0 +1,47 @@
+{
+  "envelope": {
+    "algorithm": "x25519-xsalsa20poly1305",
+    "captured_at": "2026-04-01T08:56:59Z",
+    "ciphertext": "tON9TRywZ6XRxYfBhBw1XT+pNzV2ky4BmD9jUHKOba0Rdn5LeE2F84+dBX9QKGF7q2qeVKF\/NrsJoZhbVOrMuM+Xpnz0WX68\/UmpWV+UFT5Ll\/kHD\/ZrFA3cVNo149VxhcYZbUh0BHrAhwExr98qZmd5XrGyvC2vWse33Vs9e0QC4dc08DnLLa6hL+sPYPHdQNLRELGJvcMWYLDWRn89oi9TDlyA+\/UFonpCm+B+h\/192a3tNzBFm6CyxlHWnJInSuwU+sX4ZJ5cmADzsbwFTFhpTztAzxFMpwhSNdZiKk5aRTaCVUPBP+5ueYTfmJl\/o2OCL+BiRjg1\/0djR7DmGhjJIII\/iv1ncfu4iDQNz1WPKz5MtwLo8o0W8Yco79ohq3EJIRD+q0K00vPxWiR34S82vISdo+f33tG2cAu3mk9UhA==",
+    "ephemeral_public_key": "mYfQ0+HdX0ljkgRMjWzS6qASUyad09S0+8Dx+0gOf0A=",
+    "nonce": "IMriUtKYBqW58CI3O1gHPrmpRh29XaTw",
+    "version": 1
+  },
+  "expected_x25519_public": "wBy7CysR4LWAhR2bAK8ll37Y209g5+x59LVF01wLKlU=",
+  "keypair": {
+    "algorithm": "ed25519",
+    "created_at": "2026-04-01T08:56:59Z",
+    "private_key": "tD9DnFdh\/dj4mKDCkW3PBSl2F6mp1JQ4bsVXKblM6m8=",
+    "public_key": "0ZmSwIVlUqoD2uLW9Q97eaffcAeX3zUaeJO9b\/WxEZo=",
+    "version": 1
+  },
+  "plaintext": {
+    "cookies": [
+      {
+        "domain": ".example.com",
+        "expires": 1893456789,
+        "httpOnly": true,
+        "name": "session",
+        "path": "\/",
+        "sameSite": "Lax",
+        "secure": true,
+        "value": "swift-fixture-session"
+      }
+    ],
+    "origins": [
+      {
+        "localStorage": [
+          {
+            "name": "token",
+            "value": "fixture-token"
+          },
+          {
+            "name": "theme",
+            "value": "light"
+          }
+        ],
+        "origin": "https:\/\/example.com"
+      }
+    ]
+  }
+}
