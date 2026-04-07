@@ -271,6 +271,10 @@ func (rt *Routes) handleUploadSession(w http.ResponseWriter, r *http.Request) {
 		writeJSON(w, http.StatusBadRequest, map[string]string{"error": "Invalid session payload"})
 		return
 	}
+	if err := VerifyEnvelopeProof(stored.RID, session, stored.RequestSecret); err != nil {
+		writeJSON(w, http.StatusBadRequest, map[string]string{"error": "Invalid session payload"})
+		return
+	}
 
 	if rt.storage.StoreSession(stored.RID, session) == nil {
 		writeJSON(w, http.StatusBadRequest, map[string]string{"error": "Failed to store session"})
@@ -307,6 +311,14 @@ func (rt *Routes) handleUploadSeedSession(w http.ResponseWriter, r *http.Request
 	}
 
 	if !IsValidAlgorithm(seed.Algorithm) {
+		writeJSON(w, http.StatusBadRequest, map[string]string{"error": "Invalid session payload"})
+		return
+	}
+	if strings.TrimSpace(seed.RequestSignature) == "" {
+		writeJSON(w, http.StatusBadRequest, map[string]string{"error": "Invalid session payload"})
+		return
+	}
+	if err := VerifyEnvelopeProof(stored.RID, seed, stored.RequestSecret); err != nil {
 		writeJSON(w, http.StatusBadRequest, map[string]string{"error": "Invalid session payload"})
 		return
 	}
