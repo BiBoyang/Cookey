@@ -321,6 +321,10 @@ func buildSeedEnvelope(context config.BootstrapContext, manifest *models.LoginMa
 	if err != nil {
 		return nil, err
 	}
+	envelope.RequestSignature, err = crypto.ComputeEnvelopeProof(manifest.RID, envelope, manifest.RequestSecret)
+	if err != nil {
+		return nil, err
+	}
 	return &envelope, nil
 }
 

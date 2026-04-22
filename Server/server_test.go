@@ -108,12 +108,13 @@ func newLoginRequest(rid string) LoginRequest {
 		DeviceID:          "device-1",
 		ExpiresAt:         ISO8601Time{Time: time.Now().Add(5 * time.Minute).UTC()},
 		RequestProof:      "proof-1",
+		RequestSecret:     "c2VydmVyLXRlc3QtcmVxdWVzdC1zZWNyZXQ",
 		RID:               rid,
 		TargetURL:         "https://example.com/login",
 	}
 }
 
-func newSeedSession() EncryptedSession {
+func newSessionEnvelope() EncryptedSession {
 	return EncryptedSession{
 		Algorithm:          AlgorithmX25519XSalsa20Poly1305,
 		CapturedAt:         nowISO8601(),
@@ -122,6 +123,18 @@ func newSeedSession() EncryptedSession {
 		Nonce:              "nonce",
 		Version:            1,
 	}
+}
+
+func newSignedSession(t *testing.T, rid string) EncryptedSession {
+	t.Helper()
+
+	session := newSessionEnvelope()
+	signature, err := ComputeEnvelopeProof(rid, session, newLoginRequest(rid).RequestSecret)
+	if err != nil {
+		t.Fatalf("compute envelope proof: %v", err)
+	}
+	session.RequestSignature = signature
+	return session
 }
 
 func TestSeedSessionUploadRetrieveAndClear(t *testing.T) {
@@ -140,7 +153,7 @@ func TestSeedSessionUploadRetrieveAndClear(t *testing.T) {
 		t.Fatalf("refresh request unexpectedly triggered push on creation")
 	}
 
-	rec = performJSONRequest(t, mux, http.MethodPost, "/v1/requests/rid-seed/seed-session", newSeedSession())
+	rec = performJSONRequest(t, mux, http.MethodPost, "/v1/requests/rid-seed/seed-session", newSignedSession(t, "rid-seed"))
 	if rec.Code != http.StatusCreated {
 		t.Fatalf("upload seed status = %d, body = %s", rec.Code, rec.Body.String())
 	}
@@ -214,7 +227,7 @@ func TestNilAPNSClientDoesNotPanicOnSeedUpload(t *testing.T) {
 		t.Fatalf("create request status = %d, body = %s", rec.Code, rec.Body.String())
 	}
 
-	rec = performJSONRequest(t, mux, http.MethodPost, "/v1/requests/rid-nil-apns/seed-session", newSeedSession())
+	rec = performJSONRequest(t, mux, http.MethodPost, "/v1/requests/rid-nil-apns/seed-session", newSignedSession(t, "rid-nil-apns"))
 	if rec.Code != http.StatusCreated {
 		t.Fatalf("upload seed status = %d, body = %s", rec.Code, rec.Body.String())
 	}
@@ -235,7 +248,7 @@ func TestSeedSessionPushRateLimit(t *testing.T) {
 			t.Fatalf("create request %d status = %d, body = %s", i, rec.Code, rec.Body.String())
 		}
 
-		rec = performJSONRequest(t, mux, http.MethodPost, "/v1/requests/"+rid+"/seed-session", newSeedSession())
+		rec = performJSONRequest(t, mux, http.MethodPost, "/v1/requests/"+rid+"/seed-session", newSignedSession(t, rid))
 		if rec.Code != http.StatusCreated {
 			t.Fatalf("upload seed %d status = %d, body = %s", i, rec.Code, rec.Body.String())
 		}
@@ -333,11 +346,73 @@ func TestRequestValidation(t *testing.T) {
 		t.Fatalf("valid refresh status = %d, body = %s", rec.Code, rec.Body.String())
 	}
 
-	invalidSeed := newSeedSession()
+	invalidSeed := newSessionEnvelope()
 	invalidSeed.Algorithm = "bogus"
 	rec = performJSONRequest(t, mux, http.MethodPost, "/v1/requests/rid-seed-validation/seed-session", invalidSeed)
 	if rec.Code != http.StatusBadRequest {
 		t.Fatalf("invalid seed algorithm status = %d, body = %s", rec.Code, rec.Body.String())
+	}
+}
+
+func TestUploadSessionRejectsInvalidSignature(t *testing.T) {
+	mux, storage, _ := newTestServer()
+
+	create := newLoginRequest("rid-invalid-session-signature")
+	rec := performJSONRequest(t, mux, http.MethodPost, "/v1/requests", create)
+	if rec.Code != http.StatusCreated {
+		t.Fatalf("create request status = %d, body = %s", rec.Code, rec.Body.String())
+	}
+
+	session := newSignedSession(t, create.RID)
+	session.RequestSignature = "invalid-signature"
+
+	rec = performJSONRequest(t, mux, http.MethodPost, "/v1/requests/"+create.RID+"/session", session)
+	if rec.Code != http.StatusBadRequest {
+		t.Fatalf("invalid signature status = %d, body = %s", rec.Code, rec.Body.String())
+	}
+
+	stored := storage.GetRequest(create.RID)
+	if stored == nil {
+		t.Fatal("stored request not found")
+	}
+	if stored.Status != StatusPending {
+		t.Fatalf("stored status = %s, want %s", stored.Status, StatusPending)
+	}
+	if stored.EncryptedSession != nil {
+		t.Fatal("invalid signed session should not be stored")
+	}
+}
+
+func TestSeedSessionRejectsInvalidSignatureAndSkipsPush(t *testing.T) {
+	mux, storage, sender := newTestServer()
+
+	create := newLoginRequest("rid-invalid-seed-signature")
+	create.APNEnvironment = "sandbox"
+	create.APNToken = "token-seed-invalid"
+	create.RequestType = RequestTypeRefresh
+
+	rec := performJSONRequest(t, mux, http.MethodPost, "/v1/requests", create)
+	if rec.Code != http.StatusCreated {
+		t.Fatalf("create request status = %d, body = %s", rec.Code, rec.Body.String())
+	}
+
+	seed := newSignedSession(t, create.RID)
+	seed.RequestSignature = "invalid-signature"
+
+	rec = performJSONRequest(t, mux, http.MethodPost, "/v1/requests/"+create.RID+"/seed-session", seed)
+	if rec.Code != http.StatusBadRequest {
+		t.Fatalf("invalid seed signature status = %d, body = %s", rec.Code, rec.Body.String())
+	}
+
+	stored := storage.GetRequest(create.RID)
+	if stored == nil {
+		t.Fatal("stored request not found")
+	}
+	if stored.EncryptedSeedSession != nil {
+		t.Fatal("invalid signed seed session should not be stored")
+	}
+	if sender.count() != 0 {
+		t.Fatalf("invalid signed seed session unexpectedly triggered push count=%d", sender.count())
 	}
 }
 
